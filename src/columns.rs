@@ -21,7 +21,6 @@ const POPULAR_CHANGESET_TAGS: &[&str] = &[
     "warnings",
 ];
 
-
 /// CSV output column
 // last inner String is the column name
 #[derive(Debug, PartialEq, Clone)]
@@ -35,13 +34,15 @@ pub(crate) enum Column {
     NumChanges(String),
     CommentsCount(String),
     Tag(String, String),
-
 }
 
 impl FromStr for Column {
     type Err = anyhow::Error;
     fn from_str(val: &str) -> Result<Self, Self::Err> {
-        let mut args = val.splitn(2, &['→', ':']).map(|s| s.trim().to_string()).collect::<Vec<String>>();
+        let mut args = val
+            .splitn(2, &['→', ':'])
+            .map(|s| s.trim().to_string())
+            .collect::<Vec<String>>();
         if args.len() == 1 {
             args.push(args[0].clone());
         }
@@ -65,7 +66,7 @@ impl FromStr for Column {
                 } else {
                     Err(anyhow::anyhow!("Unknown column value: {}", col))
                 }
-            },
+            }
         }
     }
 }
