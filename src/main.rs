@@ -1,11 +1,11 @@
-#[allow(warnings)]
 use anyhow::Result;
 use clap::Parser;
 use osmio;
 use osmio::changesets::ChangesetReader;
-use read_progress::{ReadWithSize};
 use indicatif::ProgressBar;
+#[allow(unused_imports)]
 use log::{debug, error, info, log_enabled, trace, warn, Level};
+use read_progress::ReadWithSize;
 
 mod columns;
 use columns::Column;
@@ -54,7 +54,6 @@ async fn main() -> Result<()> {
         None
     };
 
-    let mut total = 0;
     while let Some(c) = reader.next_changeset()? {
         bar.set_position((1000.*reader.get_ref().get_ref().fraction()).round() as u64);
         for col in &columns {
@@ -81,9 +80,6 @@ async fn main() -> Result<()> {
 
         output.write_record(None::<&[u8]>)?;
         
-        total += 1;
-        //if total >= 1000 { break; }
-
 	}
 
     bar.finish();

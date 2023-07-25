@@ -710,7 +710,9 @@ dependencies = [
 
 [[package]]
 name = "osmio"
-version = "0.7.0"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef304c46f8dce693d350b2ae08ce8858320d452b1cc029d001be6b7ada1f000c"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -804,7 +806,9 @@ dependencies = [
 
 [[package]]
 name = "read-progress"
-version = "0.3.0"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5fdafe21764a087ac5ecc957daa9d16f741cd37d3996cb45533b4956eefdf41d"
 
 [[package]]
 name = "redox_syscall"
