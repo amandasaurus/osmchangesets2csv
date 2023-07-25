@@ -3,7 +3,7 @@ use clap::Parser;
 use indicatif::ProgressBar;
 #[allow(unused_imports)]
 use log::{debug, error, info, log_enabled, trace, warn, Level};
-use osmio;
+
 use osmio::changesets::ChangesetReader;
 use read_progress::ReadWithSize;
 
@@ -50,7 +50,7 @@ async fn main() -> Result<()> {
         }
 
         let mut output_tags = csv::Writer::from_path(output_tags)?;
-        output_tags.write_record(&["changeset_id", "key", "value"])?;
+        output_tags.write_record(["changeset_id", "key", "value"])?;
         Some(output_tags)
     } else {
         None
@@ -68,7 +68,7 @@ async fn main() -> Result<()> {
                         .map_or("".to_string(), |cl| cl.to_iso_string()),
                 )?,
                 Column::Uid(_title) => {
-                    output.write_field(c.uid.clone().map_or("".to_string(), |x| x.to_string()))?
+                    output.write_field(c.uid.map_or("".to_string(), |x| x.to_string()))?
                 }
                 Column::User(_title) => {
                     output.write_field(c.user.clone().map_or("".to_string(), |x| x.to_string()))?
@@ -80,7 +80,7 @@ async fn main() -> Result<()> {
                 }
 
                 Column::Tag(tag, _title) => {
-                    output.write_field(c.tag(tag).unwrap_or("").to_string())?
+                    output.write_field(c.tag(tag).unwrap_or(""))?
                 }
             }
         }
@@ -88,7 +88,7 @@ async fn main() -> Result<()> {
         if let Some(ref mut output_tags) = output_tags {
             let c_id = c.id.to_string();
             for (k, v) in c.tags.iter() {
-                output_tags.write_record(&[&c_id, k, v])?;
+                output_tags.write_record([&c_id, k, v])?;
             }
         }
 
