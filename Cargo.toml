@@ -1,5 +1,5 @@
 [package]
-name = "osmchangeset2csv"
+name = "osmchangesets2csv"
 version = "0.1.0"
 edition = "2021"
 authors = ["Amanda McCann <amanda@technomancy.org>"]

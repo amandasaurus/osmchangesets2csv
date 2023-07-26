@@ -1,4 +1,4 @@
-# `osmchangeset2csv`
+# `osmchangesets2csv`
 
 Convert OpenStreetMap Changeset files to CSV files
 
