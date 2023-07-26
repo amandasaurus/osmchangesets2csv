@@ -5,14 +5,26 @@ Convert OpenStreetMap Changeset files to CSV files
 
 ## Getting data
 
+Changeset file can be downloaded at: [https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2](https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2)
+
+Download a changeset dump (~6 GiB)
+```sh
+$ aria2c --seed-time 0 https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2.torrent
+```
+
+Parse & read it:
+
 
 ## Installation
 
+TBC
 
 ## Usage
 
+### Column formats
 
-# Examples of usage
+
+## Examples of it being used
 
 * Your project here!
 
