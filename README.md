@@ -21,7 +21,23 @@ Parse & read it:
 
 ## Usage
 
-	osmchangesets2csv
+	osmchangesets2csv -i ~/osm-data/changesets-230717.osm.bz2 -o /dev/stdout
+
+
+### Sample output
+
+changeset_id  |  created               |  closed                |  uid     |  user         |  open   |  num_changes  |  comments_count  |  created_by          |  comment                            |  source  |  imagery_used
+--------------|------------------------|------------------------|----------|---------------|---------|---------------|------------------|----------------------|-------------------------------------|----------|--------------
+1000006       |  2009-04-28T07:29:57Z  |  2009-04-28T08:29:57Z  |  33757   |  Minh Nguyen  |  false  |  35           |  0               |  Potlatch 0.11       |                                     |          |
+1000007       |  2009-04-28T07:30:00Z  |  2009-04-28T07:30:02Z  |  105730  |  Wetzi        |  false  |  8            |  0               |  JOSM                |  meine falsche Eintragung entfernt  |          |
+1000008       |  2009-04-28T07:30:01Z  |  2009-04-28T08:30:01Z  |  9250    |  j3m          |  false  |  0            |  0               |  Potlatch 0.11       |                                     |          |
+1000009       |  2009-04-28T07:30:07Z  |  2009-04-28T07:30:09Z  |  35074   |  mikeltxo     |  false  |  8            |  0               |  JOSM/1.5 (1546 en)  |  Eibar                              |          |
+1000010       |  2009-04-28T07:30:07Z  |  2009-04-28T07:30:19Z  |  28145   |  amillar      |  false  |  26           |  0               |  JOSM/1.5 (1561 en)  |  tiger cleanup                      |          |
+1000011       |  2009-04-28T07:30:21Z  |  2009-04-28T07:30:22Z  |  7008    |  elsevilla    |  false  |  2            |  0               |  JOSM                |  modif-4tcinturo                    |          |
+1000012       |  2009-04-28T07:30:22Z  |  2009-04-28T08:30:22Z  |  45347   |  eriosw       |  false  |  14           |  0               |  Potlatch 0.11       |                                     |          |
+1000013       |  2009-04-28T07:30:24Z  |  2009-04-28T08:30:24Z  |  33640   |  kaakeli      |  false  |  0            |  0               |  Potlatch 0.11       |                                     |          |
+1000014       |  2009-04-28T07:30:33Z  |  2009-04-28T07:30:38Z  |  24748   |  mabapla      |  false  |  25           |  0               |  JOSM/1.5 (1561 de)  |  Feldwege südl. Mittelstadt         |          |
+1000015       |  2009-04-28T07:30:37Z  |  2009-04-28T08:30:37Z  |  14022   |  ressu        |  false  |  0            |  0               |  Potlatch 0.11       |                                     |          |
 
 ### Column formats
 
