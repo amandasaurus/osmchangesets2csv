@@ -7,13 +7,10 @@ Convert OpenStreetMap Changeset files to CSV files
 
 Changeset file can be downloaded at: [https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2](https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2)
 
-Download a changeset dump (~6 GiB)
+Download a changeset dump (~6 GiB as of July 2023)
 ```sh
 $ aria2c --seed-time 0 https://planet.openstreetmap.org/planet/changesets-latest.osm.bz2.torrent
 ```
-
-Parse & read it:
-
 
 ## Installation
 
@@ -22,6 +19,8 @@ Parse & read it:
 ## Usage
 
 	osmchangesets2csv -i ~/osm-data/changesets-230717.osm.bz2 -o /dev/stdout
+
+As of July 2023, this takes about 30 minutes to run on my desktop computer.
 
 
 ### Sample output
@@ -40,6 +39,10 @@ changeset_id  |  created               |  closed                |  uid     |  us
 1000015       |  2009-04-28T07:30:37Z  |  2009-04-28T08:30:37Z  |  14022   |  ressu        |  false  |  0            |  0               |  Potlatch 0.11       |                                     |          |
 
 ### Column formats
+
+Control column output with `-c`/`--columns`.
+
+TBC
 
 ## Todo
 
