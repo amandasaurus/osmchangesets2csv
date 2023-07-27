@@ -17,11 +17,23 @@ Parse & read it:
 
 ## Installation
 
-TBC
+	cargo install osmchangesets2csv
 
 ## Usage
 
+	osmchangesets2csv
+
 ### Column formats
+
+## Todo
+
+This software isn't finished, here's what I'd like to add. Feel free to send a patch
+
+* Write to compressed output (Gzip & Bzip2). Also in a separate thread too
+* Read (& uncompress) input file in a separate thread. This multiprocessing
+  should make things faster.
+* Query the OSM.org servers for current status, and update the CSV. e.g. close
+  exisiting changesets, and add new one. The Dump is only once a week.
 
 
 ## Examples of it being used
